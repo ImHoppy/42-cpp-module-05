@@ -2,12 +2,23 @@
 
 /* ------------------------------- CONSTRUCTOR ------------------------------ */
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): _name("Bob"), _grade(150)
 {
+	return ;
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src )
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src._name), _grade(src._grade)
 {
+	return ;
+}
+
+Bureaucrat::Bureaucrat( const std::string & name, int grade ) : _name(name)
+{
+	if (grade < 1)
+		throw Bureaucrat::GradeTooLowException();
+	if (grade > 150)
+		throw Bureaucrat::GradeTooHighException();
+	this->_grade = grade;
 }
 
 
@@ -22,14 +33,15 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+	{
+		// this->_name = rhs.getName();
+		this->_grade = rhs.getGrade();
+	}
 	return *this;
 }
 
-std::ostream &				operator<<( std::ostream & o , Bureaucrat const & src) const
+std::ostream &				operator<<( std::ostream & o , Bureaucrat const & src)
 {
 	o << src.getName() << ", bureaucrat grade " << src.getGrade();
 	return o;
@@ -39,27 +51,27 @@ std::ostream &				operator<<( std::ostream & o , Bureaucrat const & src) const
 
 void						Bureaucrat::increment( void )
 {
-	if ( this->_value > 1 )
-		this->_value--;
+	if ( this->_grade > 1 )
+		this->_grade--;
 	else
 		throw Bureaucrat::GradeTooHighException();
 }
 void						Bureaucrat::decrement( void )
 {
-	if ( this->_value < 150 )
-		this->_value++;
+	if ( this->_grade < 150 )
+		this->_grade++;
 	else
 		throw Bureaucrat::GradeTooLowException();
 }
 
 /* -------------------------------- ACCESSOR -------------------------------- */
 
-int						Bureaucrat::getGrade( void ) const
+int	const &					Bureaucrat::getGrade( void ) const
 {
 	return this->_grade;
 }
 
-std::string				Bureaucrat::getName( void ) const
+std::string const &			Bureaucrat::getName( void ) const
 {
 	return this->_name;
 }

@@ -9,14 +9,17 @@ class Bureaucrat : public std::exception
 	public:
 		Bureaucrat( void );
 		Bureaucrat( const Bureaucrat & src );
+		Bureaucrat( const std::string & name, int grade );
+
+				
 		~Bureaucrat( void );
 
 		Bureaucrat &			operator=( Bureaucrat const & rhs );
 		
 		void					increment( void );
 		void					decrement( void );
-		int						getGrade( void ) const;
-		std::string				getName( void ) const;
+		int const &				getGrade( void ) const;
+		std::string	const &		getName( void ) const;
 		
 		class GradeTooHighException : public std::exception
 		{
@@ -34,6 +37,6 @@ class Bureaucrat : public std::exception
 		std::string const		_name;
 };
 
-std::ostream &			operator<<( std::ostream & o , Bureaucrat const & src) const;
+std::ostream &			operator<<( std::ostream & o , Bureaucrat const & src);
 
 #endif /* BUREAUCRAT_HPP */
