@@ -4,7 +4,7 @@
 # include <iostream>
 # include <string>
 
-class Bureaucrat : public std::exception
+class Bureaucrat
 {
 	public:
 		Bureaucrat( void );
@@ -24,17 +24,17 @@ class Bureaucrat : public std::exception
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char *		what( void ) const throw();
+				char const * what( void ) const throw ();
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char *		what( void ) const throw();
+				char const * what( void ) const throw ();
 		};
 		
 	private:
-		int						_grade;
 		std::string const		_name;
+		int						_grade;
 };
 
 std::ostream &			operator<<( std::ostream & o , Bureaucrat const & src);
