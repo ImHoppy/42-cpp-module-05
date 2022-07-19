@@ -34,38 +34,41 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 	
-
+	
 	LOG(std::endl << "Increment and High grade test")
-	try
 	{
 		Bureaucrat	michel("Michel", 1);
 		michel.decrement();
 		std::cout << michel << std::endl;
 		michel.increment();
 		std::cout << michel << std::endl;
-		michel.increment();
+		try
+		{
+			michel.increment();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 		std::cout << michel << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
 	}
 
 	LOG(std::endl << "Descrement and Low grade test")
-	try
 	{
 		Bureaucrat	bob;
 		bob.increment();
 		std::cout << bob << std::endl;
 		bob.decrement();
 		std::cout << bob << std::endl;
-		bob.decrement();
+		try
+		{
+			bob.decrement();
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 		std::cout << bob << std::endl;
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
 	return 0;
 }
