@@ -9,6 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery", 145, 137)
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ) : AForm(src)
 {
+	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( std::string const target ) : AForm("Shrubbery", target, 145, 137)

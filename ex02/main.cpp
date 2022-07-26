@@ -6,10 +6,11 @@
 
 int	main(void)
 {
+
 	Bureaucrat bob("bob", 1);
 
 	{
-		ShrubberyCreationForm a("bob form");
+		ShrubberyCreationForm a("home");
 		ShrubberyCreationForm c(a);
 		try
 		{
@@ -18,7 +19,9 @@ int	main(void)
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
-		}		
+		}
+		c.beSigned(bob);
+		c.execute(bob);
 	}
 	{
 		std::srand(std::time(NULL));
@@ -33,6 +36,8 @@ int	main(void)
 		{
 			std::cerr << e.what() << '\n';
 		}
+		c.beSigned(bob);
+		c.execute(bob);
 		
 	}
 	return 0;

@@ -12,7 +12,7 @@ AForm::AForm(): _name("Bob"), _grade_sign(0), _grade_exec(0), _signed(false), _t
 	return ;
 }
 
-AForm::AForm( const AForm & src ) : _name(src._name), _grade_sign(src._grade_sign), _grade_exec(src._grade_exec), _signed(src._signed), _target("defaultTarget")
+AForm::AForm( const AForm & src ) : _name(src._name), _grade_sign(src._grade_sign), _grade_exec(src._grade_exec), _signed(src._signed), _target(src._target)
 {
 	return ;
 }
@@ -69,7 +69,7 @@ std::ostream &				operator<<( std::ostream & o , AForm const & src)
 
 void			AForm::beSigned( Bureaucrat const & src )
 {
-	if (src.getGrade() > this->_grade_exec || src.getGrade() > this->_grade_sign)
+	if (src.getGrade() > this->_grade_sign)
 		throw AForm::GradeTooLowException();
 	else
 		this->_signed = true;
@@ -84,7 +84,7 @@ char const * AForm::GradeTooLowException::what( void ) const throw () {
 }
 
 char const * AForm::CantExecuteException::what( void ) const throw () {
-	return "Form not signed";
+	return "Cant execute or is not signed";
 }
 
 /* -------------------------------- ACCESSOR -------------------------------- */
