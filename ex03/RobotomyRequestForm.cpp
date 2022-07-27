@@ -53,6 +53,11 @@ void								RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 	}
 }
 
+AForm * RobotomyRequestForm::make( std::string const & target )
+{
+	return new RobotomyRequestForm(target);
+}
+
 /* -------------------------------- ACCESSOR -------------------------------- */
 
 

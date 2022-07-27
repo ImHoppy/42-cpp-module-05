@@ -62,6 +62,11 @@ void								ShrubberyCreationForm::execute( Bureaucrat const & executor) const
 	treeFile.close();
 }
 
+AForm * ShrubberyCreationForm::make( std::string const & target )
+{
+	return new ShrubberyCreationForm(target);
+}
+
 /* -------------------------------- ACCESSOR -------------------------------- */
 
 
