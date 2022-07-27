@@ -46,7 +46,10 @@ AForm *			Intern::makeForm( std::string const & form, std::string const & target
 	for (size_t i = 0; i < FORM_COUNT; i++)
 	{
 		if (Intern::formsName[i] == form)
+		{
+			std::cout << "Intern creates " << Intern::formsName[i] << std::endl;
 			return Intern::formsPtr[i](target);
+		}
 	}
 	// throw Intern::UnknownFormException();
 	std::cout << "Intern: Form "<< form <<" not found" << std::endl;

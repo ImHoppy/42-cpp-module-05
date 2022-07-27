@@ -9,7 +9,7 @@
 int	main(void)
 {
 	Intern stagiaire;
-	const std::string formsName[4] = { "robotomy request", "presidential pardon", "shrubbery creation", "undefined"};
+	const std::string formsName[4] = { "presidential pardon", "robotomy request", "shrubbery creation", "undefined"};
 	for (size_t i = 0; i < 4; i++)
 	{
 		std::string form = formsName[i];
