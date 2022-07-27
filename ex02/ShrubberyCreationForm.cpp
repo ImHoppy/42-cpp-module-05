@@ -38,8 +38,10 @@ ShrubberyCreationForm &				ShrubberyCreationForm::operator=( ShrubberyCreationFo
 
 void								ShrubberyCreationForm::execute( Bureaucrat const & executor) const
 {
-	if (this->isSigned() == false || executor.getGrade() > this->getRequiredGradeExecute())
-		throw AForm::CantExecuteException();
+	if (this->isSigned() == false)
+		throw AForm::NotSignedException();
+	if (executor.getGrade() > this->getRequiredGradeExecute())
+		throw AForm::GradeTooLowException();
 
 	std::string nameFile = _target+"_shrubbery";
 	std::ofstream treeFile(nameFile.c_str());

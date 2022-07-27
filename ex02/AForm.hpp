@@ -38,7 +38,7 @@ class AForm
 			public:
 				char const * what( void ) const throw ();
 		};
-		class CantExecuteException : public std::exception
+		class NotSignedException : public std::exception
 		{
 			public:
 				char const * what( void ) const throw ();

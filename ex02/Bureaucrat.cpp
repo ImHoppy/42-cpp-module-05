@@ -90,6 +90,20 @@ void						Bureaucrat::decrement( void )
 		throw Bureaucrat::GradeTooLowException();
 }
 
+void					Bureaucrat::executeForm( AForm const & form ) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
+
 /* -------------------------------- ACCESSOR -------------------------------- */
 
 int	const &					Bureaucrat::getGrade( void ) const

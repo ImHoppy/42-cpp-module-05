@@ -83,8 +83,8 @@ char const * AForm::GradeTooLowException::what( void ) const throw () {
 	return "Grade too Low";
 }
 
-char const * AForm::CantExecuteException::what( void ) const throw () {
-	return "Cant execute or is not signed";
+char const * AForm::NotSignedException::what( void ) const throw () {
+	return "Is not signed";
 }
 
 /* -------------------------------- ACCESSOR -------------------------------- */
