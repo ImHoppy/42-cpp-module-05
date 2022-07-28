@@ -7,7 +7,7 @@ inline const char * BoolToStr(bool b)
 
 /* ------------------------------- CONSTRUCTOR ------------------------------ */
 
-Form::Form(): _name("Bob"), _grade_sign(0), _grade_exec(0), _signed(false)
+Form::Form(): _name("undefined"), _grade_sign(150), _grade_exec(150), _signed(false)
 {
 	return ;
 }
@@ -59,7 +59,7 @@ std::ostream &				operator<<( std::ostream & o , Form const & src)
 
 void			Form::beSigned( Bureaucrat const & src )
 {
-	if (src.getGrade() > this->_grade_exec || src.getGrade() > this->_grade_sign)
+	if (src.getGrade() > this->_grade_sign)
 		throw Form::GradeTooLowException();
 	else
 		this->_signed = true;

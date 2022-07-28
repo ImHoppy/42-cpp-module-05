@@ -10,7 +10,6 @@ class Bureaucrat
 		Bureaucrat( void );
 		Bureaucrat( const Bureaucrat & src );
 		Bureaucrat( const std::string & name, int grade );
-
 				
 		~Bureaucrat( void );
 

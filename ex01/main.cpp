@@ -67,14 +67,6 @@ int	main(void)
 
 		LOG(std::endl << "#3")
 		michel.increment();
-		try
-		{
-			inscription.beSigned(michel);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
 		michel.signForm(inscription);
 		std::cout << std::endl;
 		std::cout << michel << std::endl;
