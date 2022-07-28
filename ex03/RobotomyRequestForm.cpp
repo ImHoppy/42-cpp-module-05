@@ -49,7 +49,7 @@ void								RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 	}
 	else
 	{
-		std::cout << " sucess" << std::endl;
+		std::cout << " success" << std::endl;
 	}
 }
 
