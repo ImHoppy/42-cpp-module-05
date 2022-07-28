@@ -26,6 +26,7 @@ class Intern
 	private:
 		Intern( Intern const & src );
 		Intern &		operator=( Intern const & rhs );
+
 		static const std::string formsName[FORM_COUNT];
 		static AForm* (*formsPtr[FORM_COUNT])( std::string const & );
 
