@@ -6,9 +6,10 @@ int	main(void)
 {
 	LOG("Copy contructor test")
 	{
-		Bureaucrat	michel("Michel", 1);
+		Bureaucrat	michel("Michel", 2);
 		Bureaucrat	copy(michel);
 		std::cout << michel << std::endl;
+		LOG("Decrement Original")
 		michel.decrement();
 		LOG("Original Michel")
 		std::cout << michel << std::endl;
@@ -53,7 +54,7 @@ int	main(void)
 		std::cout << michel << std::endl;
 	}
 
-	LOG(std::endl << "Descrement and Low grade test")
+	LOG(std::endl << "Decrement and Low grade test")
 	{
 		Bureaucrat	bob;
 		bob.increment();
