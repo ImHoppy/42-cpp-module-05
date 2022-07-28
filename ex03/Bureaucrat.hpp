@@ -20,7 +20,7 @@ class Bureaucrat
 		
 		void					increment( void );
 		void					decrement( void );
-		void					signForm( AForm const & form );
+		void					signForm( AForm & form );
 		void					executeForm( AForm const & form ) const;
 
 		int const &				getGrade( void ) const;

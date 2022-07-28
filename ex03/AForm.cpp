@@ -7,7 +7,7 @@ inline const char * BoolToStr(bool b)
 
 /* ------------------------------- CONSTRUCTOR ------------------------------ */
 
-AForm::AForm(): _name("Bob"), _grade_sign(0), _grade_exec(0), _signed(false), _target("defaultTarget")
+AForm::AForm(): _name("undefined"), _grade_sign(150), _grade_exec(150), _signed(false), _target("undefinedTarget")
 {
 	return ;
 }
